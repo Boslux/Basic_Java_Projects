@@ -3,11 +3,6 @@ package Java;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Bu sınıf, basit bir To Do listesi uygulamasını temsil eder.
- * Kullanıcılar yeni görevler ekleyebilir, mevcut görevleri listeleyebilir,
- * görevleri tamamlayabilir ve uygulamadan çıkabilir.
- */
 public class ToDoList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -28,7 +23,7 @@ public class ToDoList {
                     completeTask(scanner, tasks);
                     break;
                 case 4:
-                    System.out.println("Programdan çıkılıyor...");
+                    System.out.println("Programdan cikiliyor...");
                     scanner.close();
                     System.exit(0);
                     break;
@@ -44,7 +39,7 @@ public class ToDoList {
         System.out.println("1. Görev Ekle");
         System.out.println("2. Görevleri Listele");
         System.out.println("3. Görevi Tamamla");
-        System.out.println("4. Çıkış Yap");
+        System.out.println("4. Cikis Yap");
     }
 
     private static int getChoice(Scanner scanner) {
@@ -62,7 +57,7 @@ public class ToDoList {
 
     private static void listTasks(ArrayList<String> tasks) {
         if (tasks.isEmpty()) {
-            System.out.println("Görev Bulunamadı.");
+            System.out.println("Görev Bulunamadi.");
         } else {
             System.out.println("Görevler:");
             for (int i = 0; i < tasks.size(); i++) {
@@ -73,15 +68,15 @@ public class ToDoList {
 
     private static void completeTask(Scanner scanner, ArrayList<String> tasks) {
         if (tasks.isEmpty()) {
-            System.out.println("Tamamlanacak görev bulunamadı.");
+            System.out.println("Tamamlanacak görev bulunamadi.");
         } else {
-            System.out.print("Tamamlanan görevinizin numarasını girin: ");
+            System.out.print("Tamamlanan görevinizin numarasini girin: ");
             int completedTaskIndex = scanner.nextInt();
             if (completedTaskIndex >= 1 && completedTaskIndex <= tasks.size()) {
                 String completedTask = tasks.remove(completedTaskIndex - 1);
-                System.out.println("Görev Tamamlandı: " + completedTask);
+                System.out.println("Görev Tamamlandi: " + completedTask);
             } else {
-                System.out.println("Geçersiz İşlem Numarası.");
+                System.out.println("Geçersiz İşlem Numarasi.");
             }
         }
     }

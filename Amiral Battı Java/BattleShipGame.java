@@ -11,10 +11,10 @@ public class BattleShipGame {
 
     public static void main(String[] args) {
         BattleShipGame game = new BattleShipGame();
-        game.playGame();
+        game.PlayGame();
     }
 
-    private void playGame() {
+    private void PlayGame() {
         initializeShips();
         System.out.println("Welcome to Battle Ship Game!");
         int hitedShips = 0;
